@@ -143,11 +143,12 @@ nav {
     transform: rotate(90deg);
 }
 
-/* Hero Section */
+/* Hero Section (index.html) */
 .hero {
     height: 100vh;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
-                url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center/cover;
+                url('https://www.cclimpex.com.sg/wp-content/uploads/2018/04/home-slider-02.jpg') no-repeat center/cover;
+    background-color: #333; /* Color de respaldo si la imagen no carga */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,6 +156,10 @@ nav {
     color: white;
     padding-top: 80px;
 }
+
+/* URL alternativa para .hero si la imagen no carga:
+   https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80
+*/
 
 .hero-content h1 {
     font-family: 'Poppins', sans-serif;
@@ -170,18 +175,39 @@ nav {
     margin-bottom: 30px;
 }
 
-/* Page Header */
+/* Page Header (land-clearing.html and build-preparation.html) */
 .page-header {
     height: 60vh;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
-                url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     padding-top: 80px;
+    background-color: #444; /* Color de respaldo si la imagen no carga */
 }
+
+/* Banner específico para Land Clearing */
+.page-header.land-clearing {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+                url('https://www.forestrymulchingpros.com/wp-content/uploads/2023/09/Land-Clearing-1.jpg') no-repeat center/cover;
+    background-color: #444; /* Color de respaldo si la imagen no carga */
+}
+
+/* URL alternativa para .page-header.land-clearing si la imagen no carga:
+   https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80
+*/
+
+/* Banner específico para Build Preparation */
+.page-header.build-preparation {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+                url('https://www.asanduff.com/wp-content/uploads/2019/06/site-preparation-of-building-construction-project.jpg') no-repeat center/cover;
+    background-color: #444; /* Color de respaldo si la imagen no carga */
+}
+
+/* URL alternativa para .page-header.build-preparation si la imagen no carga:
+   https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80
+*/
 
 .page-header .header-content h1 {
     font-family: 'Poppins', sans-serif;
