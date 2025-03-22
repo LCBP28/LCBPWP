@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rent top-quality machines for your construction projects with our build preparation services.">
+    <meta name="keywords" content="build preparation, machine rental, construction services">
+    <meta name="author" content="Land Clearing & Build Preparation">
+    <title>Build Preparation - Our Machines</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Land Clearing & Build Preparation</div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="land-clearing.html">Land Clearing</a></li>
+                <li><a href="build-preparation.html" class="active">Build Preparation</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Build Preparation Header -->
+    <section class="page-header">
+        <div class="header-content">
+            <h1>Build Preparation</h1>
+            <p>Rent the best machines for your construction projects.</p>
+        </div>
+    </section>
+
+    <!-- Machines Content -->
+    <section class="content-section">
+        <div class="content-wrapper">
+            <h2>Our Machines</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <img src="https://images.unsplash.com/photo-1581094282220-15e7cd7e730c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Excavator digging earth" loading="lazy">
+                    <h3>Excavator</h3>
+                    <p>Perfect for digging foundations and moving earth with precision.</p>
+                    <button class="card-button" role="button" tabindex="0" onclick="openPopup('excavator-popup')">Rent Now</button>
+                </div>
+                <div class="info-card">
+                    <img src="https://images.unsplash.com/photo-1560264286-9e0e5e5e5e5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Bulldozer leveling land" loading="lazy">
+                    <h3>Bulldozer</h3>
+                    <p>Heavy-duty machine for leveling land and pushing large loads.</p>
+                    <button class="card-button" role="button" tabindex="0" onclick="openPopup('bulldozer-popup')">Rent Now</button>
+                </div>
+                <div class="info-card">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Loader moving gravel" loading="lazy">
+                    <h3>Loader</h3>
+                    <p>Ideal for transporting materials like gravel, sand, and dirt.</p>
+                    <button class="card-button" role="button" tabindex="0" onclick="openPopup('loader-popup')">Rent Now</button>
+                </div>
+            </div>
+            <div class="additional-info">
+                <h3>Rental Benefits</h3>
+                <ul>
+                    <li>Flexible rental terms.</li>
+                    <li>Well-maintained equipment.</li>
+                    <li>Expert support included.</li>
+                </ul>
+            </div>
+            <a href="index.html#contact" class="cta-button">Start Renting</a>
+        </div>
+    </section>
+
+    <!-- Popups -->
+    <div id="excavator-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('excavator-popup')">×</span>
+            <h3>Excavator Rental</h3>
+            <div class="carousel">
+                <button class="carousel-btn prev" onclick="changeSlide('excavator-popup', -1)">❮</button>
+                <div class="carousel-images">
+                    <img src="https://images.unsplash.com/photo-1581094282220-15e7cd7e730c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Excavator side view" class="carousel-img active" onclick="openImageViewer('excavator-popup', this.src)" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1628424977741-b6a56d410a65?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Excavator in action" class="carousel-img" onclick="openImageViewer('excavator-popup', this.src)" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1628424977741-b6a56d410a65?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Excavator close-up" class="carousel-img" onclick="openImageViewer('excavator-popup', this.src)" loading="lazy">
+                </div>
+                <button class="carousel-btn next" onclick="changeSlide('excavator-popup', 1)">❯</button>
+            </div>
+            <div class="image-viewer" id="excavator-image-viewer">
+                <span class="close-viewer" onclick="closeImageViewer('excavator-popup')">×</span>
+                <img src="" alt="Enlarged image" class="enlarged-img">
+            </div>
+            <div class="machine-info">
+                <h4>Specifications</h4>
+                <p><strong>Capacity:</strong> 20 tons</p>
+                <p><strong>Reach:</strong> 15 ft</p>
+                <p><strong>System:</strong> Hydraulic</p>
+                <h4>Contact Information</h4>
+                <p><strong>Email:</strong> info@landandbuild.com</p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+            </div>
+        </div>
+    </div>
+    <div id="bulldozer-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('bulldozer-popup')">×</span>
+            <h3>Bulldozer Rental</h3>
+            <div class="carousel">
+                <button class="carousel-btn prev" onclick="changeSlide('bulldozer-popup', -1)">❮</button>
+                <div class="carousel-images">
+                    <img src="https://images.unsplash.com/photo-1560264286-9e0e5e5e5e5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bulldozer front view" class="carousel-img active" onclick="openImageViewer('bulldozer-popup', this.src)" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1628424977741-b6a56d410a65?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bulldozer pushing dirt" class="carousel-img" onclick="openImageViewer('bulldozer-popup', this.src)" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1628424977741-b6a56d410a65?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bulldozer on site" class="carousel-img" onclick="openImageViewer('bulldozer-popup', this.src)" loading="lazy">
+                </div>
+                <button class="carousel-btn next" onclick="changeSlide('bulldozer-popup', 1)">❯</button>
+            </div>
+            <div class="image-viewer" id="bulldozer-image-viewer">
+                <span class="close-viewer" onclick="closeImageViewer('bulldozer-popup')">×</span>
+                <img src="" alt="Enlarged image" class="enlarged-img">
+            </div>
+            <div class="machine-info">
+                <h4>Specifications</h4>
+                <p><strong>Capacity:</strong> 30 tons</p>
+                <p><strong>Blade:</strong> 10 ft</p>
+                <p><strong>Engine:</strong> 250 hp</p>
+                <h4>Contact Information</h4>
+                <p><strong>Email:</strong> info@landandbuild.com</p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+            </div>
+        </div>
+    </div>
+    <div id="loader-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('loader-popup')">×</span>
+            <h3>Loader Rental</h3>
+            <div class="carousel">
+                <button class="carousel-btn prev" onclick="changeSlide('loader-popup', -1)">❮</button>
+                <div class="carousel-images">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Loader front view" class="carousel-img active" onclick="openImageViewer('loader-popup', this.src)" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1628424977741-b6a56d410a65?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Loader transporting materials" class="carousel-img" onclick="openImageViewer('loader-popup', this.src)" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1628424977741-b6a56d410a65?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Loader in action" class="carousel-img" onclick="openImageViewer('loader-popup', this.src)" loading="lazy">
+                </div>
+                <button class="carousel-btn next" onclick="changeSlide('loader-popup', 1)">❯</button>
+            </div>
+            <div class="image-viewer" id="loader-image-viewer">
+                <span class="close-viewer" onclick="closeImageViewer('loader-popup')">×</span>
+                <img src="" alt="Enlarged image" class="enlarged-img">
+            </div>
+            <div class="machine-info">
+                <h4>Specifications</h4>
+                <p><strong>Capacity:</strong> 5 tons</p>
+                <p><strong>Bucket:</strong> 3 cubic yards</p>
+                <p><strong>Engine:</strong> 150 hp</p>
+                <h4>Contact Information</h4>
+                <p><strong>Email:</strong> info@landandbuild.com</p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+            <p>© 2025 Land Clearing & Build Preparation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

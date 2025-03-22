@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Expert land clearing and build preparation services. Rent top-quality machines for your construction projects.">
+    <meta name="keywords" content="land clearing, build preparation, machine rental, construction services">
+    <meta name="author" content="Land Clearing & Build Preparation">
+    <title>Land Clearing & Build Preparation</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Land Clearing & Build Preparation</div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="land-clearing.html">Land Clearing</a></li>
+                <li><a href="build-preparation.html">Build Preparation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Land, Build Your Future</h1>
+            <p>Expert land clearing and machine rentals for all your project needs.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Services Overview (Land Clearing and Build Preparation) -->
+    <section class="services-container">
+        <!-- Land Clearing Overview -->
+        <div id="land-clearing" class="service-section">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cleared landscape" class="service-img" loading="lazy">
+                <h2>Land Clearing</h2>
+                <p>Prepare your land for any project with our expert clearing services. We handle everything from vegetation to debris, ensuring a clean slate for your next step.</p>
+                <a href="land-clearing.html" class="cta-button">See More</a>
+            </div>
+        </div>
+
+        <!-- Build Preparation Overview -->
+        <div id="build-prep" class="service-section">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1582639590011-f5f75c1f3de3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Construction machinery" class="service-img" loading="lazy">
+                <h2>Build Preparation</h2>
+                <p>Rent top-quality machines to kickstart your construction projects. Reliable, efficient, and ready to work when you are.</p>
+                <a href="build-preparation.html" class="cta-button">See More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Our Receptionist</h2>
+        <p>Ready to start? Reach out to us for bookings or inquiries!</p>
+        <form id="contact-form">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+        <div id="form-message"></div>
+        <p>Phone: (123) 456-7890 | Email: info@landandbuild.com</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+            <p>© 2025 Land Clearing & Build Preparation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
