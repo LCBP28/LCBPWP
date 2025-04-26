@@ -89,13 +89,13 @@ nav {
     border-bottom-right-radius: 25px;
 }
 
+/* Logo Section */
 .logo {
-    padding: 10px 20px;
-    margin-right: 20px;
-    background: transparent;
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
+    padding: 10px 20px;
+    margin-right: auto; /* Push the logo to the left */
 }
 
 .logo img {
@@ -113,22 +113,76 @@ nav {
     white-space: nowrap;
 }
 
+/* Menu Toggle */
+.menu-toggle {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100; /* Ensure it appears above other elements */
+    transition: transform 0.3s;
+}
+
+.menu-toggle:hover {
+    transform: rotate(90deg);
+}
+
+/* Prevent Overlapping */
+@media (max-width: 768px) {
+    .logo-text {
+        font-size: 1.5rem; /* Reduce font size for smaller screens */
+    }
+
+    .menu-toggle {
+        top: 15px; /* Adjust position to avoid overlapping */
+        right: 15px;
+    }
+
+    nav {
+        padding: 15px 20px; /* Reduce padding for smaller screens */
+    }
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(45deg, #1a3c34, #2e3a3a);
+    padding: 20px 0;
+    text-align: center;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    z-index: 99; /* Ensure it appears above other elements */
+}
+
+.nav-menu.active {
+    max-height: 300px; /* Allow it to expand */
+    opacity: 1;
 }
 
 .nav-menu li {
-    margin-left: 20px;
+    margin: 15px 0;
 }
 
 .nav-menu li a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
-    padding: 5px 10px;
+    font-size: 1.2rem;
+    padding: 10px 20px;
     border-radius: 5px;
     transition: color 0.3s, transform 0.3s, outline 0.3s, background 0.3s;
+    position: relative;
 }
 
 /* Resaltar sección activa en escritorio */
@@ -149,18 +203,6 @@ nav {
     transform: scale(1.05);
 }
 
-.menu-toggle {
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: white;
-    transition: transform 0.3s;
-}
-
-.menu-toggle:hover {
-    transform: rotate(90deg);
-}
-
 /* Hero Section (index.html) */
 .hero {
     height: 100vh;
@@ -173,6 +215,13 @@ nav {
     text-align: center;
     color: white;
     padding-top: 80px;
+}
+
+.hero img {
+    max-width: 100%; /* Ensure it scales properly */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 300px; /* Set a maximum height */
+    object-fit: cover; /* Ensure it fits within the container */
 }
 
 /* URL alternativa para .hero si la imagen no carga:
@@ -793,7 +842,7 @@ footer p {
     }
 
     .nav-menu li {
-        margin: 15px 0;
+        margin: 10px 0;
     }
 
     .nav-menu li a {
@@ -973,5 +1022,99 @@ body {
     .success-message, .error-message {
         font-size: 1rem;
         padding: 8px 15px;
+    }
+}
+
+/* General adjustments for smaller screens */
+@media (max-width: 480px) {
+    /* Navigation */
+    nav {
+        padding: 10px 15px; /* Reduce padding for smaller screens */
+    }
+
+    .logo img {
+        height: 30px; /* Reduce logo size */
+    }
+
+    .logo-text {
+        font-size: 1.2rem; /* Reduce font size for smaller screens */
+    }
+
+    .menu-toggle {
+        font-size: 1.8rem; /* Adjust toggle button size */
+        top: 10px; /* Adjust position */
+        right: 10px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding-top: 60px; /* Adjust padding for smaller screens */
+    }
+
+    .hero-content h1 {
+        font-size: 2rem; /* Reduce heading size */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Reduce paragraph size */
+    }
+
+    .cta-button {
+        font-size: 0.9rem; /* Adjust button size */
+        padding: 10px 20px;
+    }
+
+    /* Services Section */
+    .services-container {
+        grid-template-columns: 1fr; /* Stack services vertically */
+        gap: 30px; /* Reduce gap between cards */
+        padding: 20px 10px; /* Adjust padding */
+    }
+
+    .service-card {
+        padding: 20px; /* Reduce padding inside cards */
+    }
+
+    .service-card h2 {
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+
+    .service-card p {
+        font-size: 0.9rem; /* Adjust paragraph size */
+    }
+
+    .service-img {
+        height: 200px; /* Reduce image height */
+    }
+
+    /* Contact Section */
+    .contact-section h2 {
+        font-size: 1.8rem; /* Adjust heading size */
+    }
+
+    .contact-section p {
+        font-size: 1rem; /* Adjust paragraph size */
+    }
+
+    form input, form textarea {
+        font-size: 0.9rem; /* Adjust input font size */
+        padding: 10px; /* Adjust padding */
+    }
+
+    form textarea {
+        height: 100px; /* Reduce textarea height */
+    }
+
+    /* Footer */
+    footer {
+        padding: 15px; /* Reduce padding */
+    }
+
+    .footer-content p {
+        font-size: 0.8rem; /* Adjust font size */
+    }
+
+    .footer-social a {
+        font-size: 0.9rem; /* Adjust font size */
     }
 }
