@@ -3,20 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Expert land clearing and build preparation services. Rent top-quality machines for your construction projects.">
-    <meta name="keywords" content="land clearing, build preparation, machine rental, construction services">
-    <meta name="author" content="Land Clearing & Build Preparation">
-    <title>Land Clearing & Build Preparation</title>
+    <meta name="description" content="Expert land clearing, build preparation, fence and gate building, and driveway services. Contact New Era Land Clearing for all your project needs.">
+    <meta name="keywords" content="land clearing, build preparation, fence and gate building, driveway build and repair, construction services">
+    <meta name="author" content="New Era Land Clearing">
+    <title>New Era Land Clearing - Land Clearing, Build Preparation, Fence & Gate Building, Driveway Services</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Analytics 4 Tracking Code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCK2S2KBRZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YCK2S2KBRZ');
+    </script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("3rJ1QACsZTPAZGjM1"); // Your EmailJS Public Key
+        })();
+    </script>
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">Land Clearing & Build Preparation</div>
+            <div class="logo">
+                <img src="images/clearing/NewEraLogo.png" alt="New Era Land Clearing">
+                <span class="logo-text">New Era Land Clearing</span>
+            </div>
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
             <ul class="nav-menu">
                 <li><a href="index.html" class="active">Home</a></li>
@@ -31,7 +49,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Transform Your Land, Build Your Future</h1>
-            <p>Expert land clearing and machine rentals for all your project needs.</p>
+            <p>Expert land clearing, machine rentals, fence and gate building, and driveway services for all your project needs.</p>
             <a href="#contact" class="cta-button">Get Started</a>
         </div>
     </section>
@@ -59,6 +77,26 @@
         </div>
     </section>
 
+    <!-- Special Service Section (Fence and Gate Building, Driveway Build and Repair) -->
+    <section class="services-container">
+        <div class="service-section">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Fence and gate installation" class="service-img" loading="lazy">
+                <h2>Fence and Gate Building</h2>
+                <p>Enhance your property's security and curb appeal with our custom fence and gate building services. We offer a variety of materials and designs to suit your needs.</p>
+                <a href="#contact" class="cta-button">Get a Quote</a>
+            </div>
+        </div>
+        <div class="service-section">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1596474-8a0126321d86?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Driveway construction" class="service-img" loading="lazy">
+                <h2>Driveway Build and Repair</h2>
+                <p>Build or repair your driveway with our expert services. We ensure durable, functional, and aesthetically pleasing driveways for your property.</p>
+                <a href="#contact" class="cta-button">Get a Quote</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <h2>Contact Our Assistant</h2>
@@ -70,7 +108,7 @@
             <button type="submit" class="cta-button">Send Message</button>
         </form>
         <div id="form-message"></div>
-        <p>Phone: (123) 456-7890 | Email: info@landandbuild.com</p>
+        <p>Phone: +1 (803) 610-1241 | Email: info@landandbuild.com</p>
     </section>
 
     <!-- Footer -->
@@ -80,10 +118,38 @@
                 <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
                 <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
             </div>
-            <p>© 2025 Land Clearing & Build Preparation. All rights reserved.</p>
+            <p>© 2025 New Era Land Clearing co. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="scripts.js"></script>
+    <!-- EmailJS Form Submission Script with Animation -->
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+            const formMessage = document.getElementById('form-message');
+
+            // Send notification email to business
+            emailjs.send('neweracontact', 'received_e2dsqgh', formData)
+                .then(function(response) {
+                    // Send confirmation email to user
+                    emailjs.send('neweracontact', 'autoreply_1z7tv5j', formData)
+                        .then(function(response) {
+                            formMessage.innerHTML = '<p class="success-message">Message sent successfully! Check your email for confirmation.</p>';
+                            document.getElementById('contact-form').reset(); // Clear form
+                        }, function(error) {
+                            formMessage.innerHTML = '<p class="error-message">Failed to send confirmation email. Please try again.</p>';
+                        });
+                }, function(error) {
+                    formMessage.innerHTML = '<p class="error-message">Failed to send message. Please try again.</p>';
+                });
+        });
+    </script>
 </body>
 </html>

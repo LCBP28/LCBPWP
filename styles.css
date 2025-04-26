@@ -90,9 +90,27 @@ nav {
 }
 
 .logo {
+    padding: 10px 20px;
+    margin-right: 20px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+    margin-right: 12px;
+}
+
+.logo-text {
     font-family: 'Poppins', sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
+    color: white;
+    white-space: nowrap;
 }
 
 .nav-menu {
@@ -101,7 +119,7 @@ nav {
 }
 
 .nav-menu li {
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .nav-menu li a {
@@ -119,7 +137,7 @@ nav {
     transform: scale(1.05);
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1101px) {
     .nav-menu li a.active {
         outline: 2px solid #e0f7fa;
         outline-offset: 2px;
@@ -397,7 +415,7 @@ body.dark-mode .additional-info h3 {
     list-style: none;
 }
 
-.additional-info ul li {
+atalytic-info ul li {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     font-weight: 300;
@@ -723,15 +741,33 @@ footer p {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     nav {
-        padding: 15px 20px;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+
+    .nav-menu.active {
+        max-height: 300px;
+        opacity: 1;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+
+    /* Remove rounded borders on nav when nav-menu is active */
+    nav:has(.nav-menu.active) {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
     .logo {
-        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .logo-text {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
     .menu-toggle {
@@ -745,21 +781,15 @@ footer p {
         top: 100%;
         left: 0;
         width: 100%;
-        background: linear-gradient(45deg, #1a3c34, #2e7d32);
+        background: linear-gradient(45deg, #1a3c34, #2e3a3a);
         padding: 20px 0;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
         text-align: center;
-        transform: translateY(-100%);
+        max-height: 0;
         opacity: 0;
-        visibility: hidden;
-        transition: transform 0.4s ease, opacity 0.3s ease;
-    }
-
-    .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        transition: max-height 0.4s ease, opacity 0.3s ease;
     }
 
     .nav-menu li {
@@ -772,7 +802,6 @@ footer p {
         position: relative;
     }
 
-    /* Resaltar sección activa en móvil */
     .nav-menu li a.active {
         background: rgba(255, 255, 255, 0.2);
         border-radius: 5px;
@@ -791,7 +820,6 @@ footer p {
         border-radius: 2px;
     }
 
-    /* Ajustar el contenedor de servicios para móvil */
     .services-container {
         grid-template-columns: 1fr;
         padding: 40px 20px;
@@ -843,5 +871,107 @@ footer p {
 
     .dark-mode-toggle {
         top: 70px;
+    }
+}
+/* Existing styles from your provided styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* ... (all other existing styles remain unchanged) ... */
+
+/* New Animation Styles for Form Messages */
+#form-message {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.success-message {
+    background: rgba(46, 125, 50, 0.1); /* Light green background */
+    color: #2e7d32; /* Green text */
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    animation: fadeSlideIn 0.5s ease forwards;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+    background: rgba(211, 47, 47, 0.1); /* Light red background */
+    color: #d32f2f; /* Red text */
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    animation: fadeSlideIn 0.5s ease forwards, shake 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Fade and Slide Animation */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Shake Animation for Error */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1100px) {
+    /* Existing media query styles */
+    nav {
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+
+    .nav-menu.active {
+        max-height: 300px;
+        opacity: 1;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+
+    nav:has(.nav-menu.active) {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    /* ... (other existing media query styles) ... */
+
+    /* Ensure form message animations work on mobile */
+    .success-message, .error-message {
+        font-size: 1rem;
+        padding: 8px 15px;
     }
 }
